@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {AbstractControl, FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
 import {AccountService} from "../service/AccountService";
 import {Router} from "@angular/router";
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-register',
@@ -15,7 +16,6 @@ export class RegisterComponent implements OnInit{
   today!:any
   ngOnInit() {
     this.today= new Date().toISOString().split("T")[0];
-    console.log(this.today)
     this.formRegister= new FormGroup({
       username: new FormControl(''),
       email: new FormControl(''),
@@ -25,9 +25,8 @@ export class RegisterComponent implements OnInit{
   }
   createAccount(){
     this.accountService.createAccount(this.formRegister.value).subscribe(
-        res=>{
-          this.router.navigate(["/home"])
-        }
+        res=>
+          Swal.fire('Done!', 'Chúc mừng bạn đăng kí thành công', 'success')
     )
   }
 }
