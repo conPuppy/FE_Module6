@@ -1,9 +1,13 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import {HomeComponent} from "./home/home.component";
+import {HomeAdminComponent} from "./admin/home-admin/home-admin.component";
+import {ShowAccountComponent} from "./admin/show-account/show-account.component";
 
 const routes: Routes = [
   {path:"", component: HomeComponent},
+  {path:"admin", component: HomeAdminComponent},
+  {path:"account", component: ShowAccountComponent},
 ];
 
 @NgModule({
