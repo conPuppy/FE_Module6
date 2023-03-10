@@ -10,6 +10,7 @@ import {ReactiveFormsModule} from "@angular/forms";
 import {NgxPaginationModule} from "ngx-pagination";
 import { ShowProfileComponent } from './user/show-profile/show-profile.component';
 import {LoginComponent} from "./User/login/login.component";
+import { SupplierComponent } from './user/supplier/supplier.component';
 
 @NgModule({
     declarations: [
@@ -18,6 +19,7 @@ import {LoginComponent} from "./User/login/login.component";
         HomeAdminComponent,
         ShowProfileComponent,
         LoginComponent,
+        SupplierComponent,
     ],
     imports: [
         BrowserModule,

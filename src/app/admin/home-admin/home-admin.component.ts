@@ -32,7 +32,6 @@ export class HomeAdminComponent implements OnInit{
     this.accountService.getAllAccount(this.p).subscribe((response: any) => {
       this.accounts = response;
       this.total = response.total;
-      console.log(response)
     })
   }
 

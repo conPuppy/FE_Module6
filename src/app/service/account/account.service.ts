@@ -21,7 +21,7 @@ export class AccountService implements OnInit{
 
   blockAccount(id: number) :Observable<any> {
     // @ts-ignore
-    return this.http.put<any>(`http://localhost:8080/admin/accounts/block/${id}`);
+    return this.http.post<any>(`http://localhost:8080/admin/accounts/block/${id}`);
   }
 
   search(stringSearch: String) :Observable<any> {
@@ -34,7 +34,7 @@ export class AccountService implements OnInit{
 
   upVip(id: number): Observable<any> {
     // @ts-ignore
-    return this.http.put<any>(`http://localhost:8080/admin/accounts/vip/${id}`);
+    return this.http.post <any>(`http://localhost:8080/admin/accounts/vip/${id}`);
   }
 
   login(account: any): Observable<AccountToken> {
