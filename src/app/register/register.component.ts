@@ -1,9 +1,9 @@
 import {Component, OnInit} from '@angular/core';
 import {AbstractControl, FormControl, FormGroup, Validators} from "@angular/forms";
-import {AccountService} from "../service/AccountService";
 import {Router} from "@angular/router";
 import Swal from 'sweetalert2';
 import {AccountCreate} from "../model/AccountCreate";
+import {AccountService} from "../service/account/account.service";
 
 @Component({
     selector: 'app-register',
