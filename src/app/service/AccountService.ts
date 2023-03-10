@@ -10,4 +10,10 @@ export class AccountService{
     createAccount(accountCreate:AccountCreate):Observable<any>{
         return this.http.post<any>('http://localhost:8080/register',accountCreate)
     }
+    findAccountByUsername(username:String):Observable<any>{
+        return this.http.get<any>(`http://localhost:8080/register/findAccountByUsername/${username}`)
+    }
+    findAccountByEmail(email:String):Observable<any>{
+        return this.http.get<any>(`http://localhost:8080/register/findAccountByEmail/${email}`)
+    }
 }

@@ -10,22 +10,57 @@
             <form [formGroup]="formRegister" (ngSubmit)="createAccount()">
                 <div class="uk-form-group">
                     <div class="uk-position-relative w-100">
-                        <input class="uk-input" type="text"  placeholder="Your Username" formControlName="username">
+                        <input class="uk-input" type="text" (ngModelChange)="funcCheckDuplicateUsername(formRegister.get('username')?.value)" placeholder="Your Username" formControlName="username">
+                    </div>
+                    <div class="uk-position-relative w-100" *ngFor="let validation of validation_messages.username">
+                        <div class="error-message"
+                             *ngIf="formRegister?.get('username')?.hasError(validation.type) && (formRegister?.get('username')?.dirty || formRegister?.get('username')?.touched)">
+                            {{validation.message}}</div>
+                    </div>
+                    <div class="uk-position-relative w-100" *ngIf="checkDuplicateUsername">
+                        <div class="error-message">
+                            Account already exists!
+                        </div>
                     </div>
                 </div>
                 <div class="uk-form-group">
                     <div class="uk-position-relative w-100">
-                        <input class="uk-input" type="email" placeholder="Your email " formControlName="email">
+                        <input class="uk-input" type="email" (ngModelChange)="funcCheckDuplicateEmail(formRegister.get('email')?.value)" placeholder="Your email " formControlName="email">
+                    </div>
+                    <div class="uk-position-relative w-100" *ngFor="let validation of validation_messages.email">
+                        <div class="error-message"
+                             *ngIf="formRegister?.get('email')?.hasError(validation.type) && (formRegister?.get('email')?.dirty || formRegister?.get('email')?.touched)">
+                            {{validation.message}}</div>
+                    </div>
+                    <div class="uk-position-relative w-100" *ngIf="checkDuplicateEmail">
+                        <div class="error-message">
+                            Email already exists!
+                        </div>
                     </div>
                 </div>
                 <div class="uk-form-group">
                     <div class="uk-position-relative w-100">
-                        <input class="uk-input" type="password" id="password" placeholder="Your password" formControlName="password">
+                        <input class="uk-input" type="password"  placeholder="Your password" formControlName="password">
+                    </div>
+                    <div class="uk-position-relative w-100" *ngFor="let validation of validation_messages.password">
+                        <div class="error-message"
+                             *ngIf="formRegister?.get('password')?.hasError(validation.type) && (formRegister?.get('password')?.dirty || formRegister?.get('password')?.touched)">
+                            {{validation.message}}</div>
                     </div>
                 </div>
                 <div class="uk-form-group">
                     <div class="uk-position-relative w-100">
-                        <input class="uk-input" type="password" id="confirmPassword"  placeholder="Confirm password">
+                        <input class="uk-input" type="password" (ngModelChange)="funcCheckConfirmPassword()"  placeholder="Confirm password" formControlName="confirmPassword">
+                    </div>
+                    <div class="uk-position-relative w-100" *ngFor="let validation of validation_messages.confirmPassword">
+                        <div class="error-message"
+                             *ngIf="formRegister?.get('confirmPassword')?.hasError(validation.type) && (formRegister?.get('confirmPassword')?.dirty || formRegister?.get('confirmPassword')?.touched)">
+                            {{validation.message}}</div>
+                    </div>
+                    <div class="uk-position-relative w-100" *ngIf="checkConfirmPassword">
+                        <div class="error-message">
+                            Re-entered password does not match!
+                        </div>
                     </div>
                 </div>
                 <p>Birthday </p>
@@ -34,6 +69,11 @@
                         <input class="uk-input" type="date" id="start" name="trip-start"
                                value="yyyy-mm-dd"
                                min="yyyy-01-01" [max]="today" formControlName="birthday">
+                    </div>
+                    <div class="uk-position-relative w-100" *ngFor="let validation of validation_messages.birthday">
+                        <div class="error-message"
+                             *ngIf="formRegister?.get('birthday')?.hasError(validation.type) && (formRegister?.get('birthday')?.dirty || formRegister?.get('birthday')?.touched)">
+                            {{validation.message}}</div>
                     </div>
                 </div>
                 <button type="submit" class="btn btn-primary btn-block mb-4">Register</button>
