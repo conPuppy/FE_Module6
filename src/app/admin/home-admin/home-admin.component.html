@@ -423,7 +423,7 @@
                             <th scope="col"></th>
                         </tr>
                         </thead>
-                        <tbody class="list" *ngFor="let a of accounts">
+                        <tbody class="list" *ngFor="let a of accounts| paginate: { itemsPerPage: 6, currentPage: p, totalItems: total }">
                         <tr>
                             <th scope="row">
                                 <div class="media align-items-center">
@@ -472,14 +472,12 @@
                                 </div>
                             </td>
                         </tr>
-
                         </tbody>
+                        <pagination-controls (pageChange)="pageChangeEvent($event)"></pagination-controls>
                     </table>
                 </div>
             </div>
         </div>
-
-
         <!-- footer
            ================================================== -->
         <div class="footer">

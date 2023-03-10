@@ -17,7 +17,10 @@ export class HomeAdminComponent implements OnInit{
   });
 
   stringSearch: any;
-  account!: Account;
+  account: any;
+
+  p: number = 1;
+  total: number = 0;
 
   constructor(private accountService: AccountService) {
   }
@@ -26,10 +29,16 @@ export class HomeAdminComponent implements OnInit{
   }
 
   getAllAccount() {
-    this.accountService.getAllAccount().subscribe((data) => {
-      this.accounts = data;
-      console.log(data)
+    this.accountService.getAllAccount(this.p).subscribe((response: any) => {
+      this.accounts = response;
+      this.total = response.total;
+      console.log(response)
     })
+  }
+
+  pageChangeEvent(event: number){
+    this.p = event;
+    this.getAllAccount();
   }
 
   blockAccount(id: number) {
@@ -62,6 +71,4 @@ export class HomeAdminComponent implements OnInit{
       this.account = data;
     })
   }
-
-
 }

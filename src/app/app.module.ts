@@ -3,26 +3,28 @@ import {BrowserModule} from '@angular/platform-browser';
 
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
-import {HomeComponent} from './home/home.component';
+import {HomeComponent} from './User/home/home.component';
 import {HomeAdminComponent} from './admin/home-admin/home-admin.component';
 import {HttpClientModule} from "@angular/common/http";
 import {ReactiveFormsModule} from "@angular/forms";
-import { ShowAccountComponent } from './admin/show-account/show-account.component';
-import { ModalModule } from 'ngx-bootstrap/modal';
+import {NgxPaginationModule} from "ngx-pagination";
+import { ShowProfileComponent } from './user/show-profile/show-profile.component';
+import {LoginComponent} from "./User/login/login.component";
 
 @NgModule({
     declarations: [
         AppComponent,
         HomeComponent,
         HomeAdminComponent,
-        ShowAccountComponent
+        ShowProfileComponent,
+        LoginComponent,
     ],
     imports: [
         BrowserModule,
         AppRoutingModule,
         HttpClientModule,
         ReactiveFormsModule,
-        ModalModule,
+        NgxPaginationModule,
     ],
     providers: [],
     bootstrap: [AppComponent]
