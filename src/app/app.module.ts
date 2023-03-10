@@ -10,7 +10,10 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {HttpClientModule} from "@angular/common/http";
 import {ShowComponent} from "./show/show.component";
 import {NgxPaginationModule} from "ngx-pagination";
+<<<<<<< HEAD
 
+=======
+>>>>>>> e67be3812fb54aea52c90254b5c92bb5f1a4c922
 
 @NgModule({
     declarations: [
@@ -32,5 +35,6 @@ import {NgxPaginationModule} from "ngx-pagination";
     providers: [],
     bootstrap: [AppComponent]
 })
+
 export class AppModule {
 }
