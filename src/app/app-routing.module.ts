@@ -9,11 +9,6 @@ const routes: Routes = [
   {path:"register", component: RegisterComponent},
   {path:"home", component: HomeComponent},
 
-//import {ShowComponent} from "./show/show.component";
-
-//const routes: Routes = [
-  //{path:"", component: ShowComponent}
-
 ];
 
 @NgModule({
