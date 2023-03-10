@@ -3,17 +3,18 @@ import {BrowserModule} from '@angular/platform-browser';
 
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
-import {HomeComponent} from './home/home.component';
 
 import {RegisterComponent} from './register/register.component';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
-import {HttpClientModule} from "@angular/common/http";
 import {ShowComponent} from "./show/show.component";
+import {HomeComponent} from './User/home/home.component';
+import {HomeAdminComponent} from './admin/home-admin/home-admin.component';
+import {HttpClientModule} from "@angular/common/http";
 import {NgxPaginationModule} from "ngx-pagination";
-<<<<<<< HEAD
+import { ShowProfileComponent } from './User/show-profile/show-profile.component';
+import { LoginComponent } from './User/login/login.component';
+import { SupplierComponent } from './User/supplier/supplier.component';
 
-=======
->>>>>>> e67be3812fb54aea52c90254b5c92bb5f1a4c922
 
 @NgModule({
     declarations: [
@@ -21,7 +22,10 @@ import {NgxPaginationModule} from "ngx-pagination";
         HomeComponent,
         RegisterComponent,
         ShowComponent,
-
+        HomeAdminComponent,
+        ShowProfileComponent,
+        LoginComponent,
+        SupplierComponent,
     ],
     imports: [
         BrowserModule,
@@ -29,8 +33,7 @@ import {NgxPaginationModule} from "ngx-pagination";
         ReactiveFormsModule,
         FormsModule,
         HttpClientModule,
-        NgxPaginationModule
-
+        NgxPaginationModule,
     ],
     providers: [],
     bootstrap: [AppComponent]
