@@ -8,6 +8,8 @@ import {HomeComponent} from './home/home.component';
 import {RegisterComponent} from './register/register.component';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {HttpClientModule} from "@angular/common/http";
+import { ShowComponent } from './show/show.component';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 //import {ShowComponent} from './show/show.component';
 //import {HttpClientModule} from "@angular/common/http";
