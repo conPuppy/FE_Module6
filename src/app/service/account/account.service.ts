@@ -15,4 +15,5 @@ export class AccountService {
     getAllProvider(): Observable<Account[]> {
         return this.http.get<Account[]>("http://localhost:8080/accounts");
     }
+
 }

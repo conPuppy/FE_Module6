@@ -8,8 +8,9 @@ import {HomeComponent} from './home/home.component';
 import {RegisterComponent} from './register/register.component';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {HttpClientModule} from "@angular/common/http";
-import { ShowComponent } from './show/show.component';
-import { NgxPaginationModule } from 'ngx-pagination';
+import {ShowComponent} from './show/show.component';
+import {NgxPaginationModule} from 'ngx-pagination';
+import {ShowtopviewComponent} from './showtopview/showtopview.component';
 
 //import {ShowComponent} from './show/show.component';
 //import {HttpClientModule} from "@angular/common/http";
@@ -20,16 +21,14 @@ import { NgxPaginationModule } from 'ngx-pagination';
     declarations: [
         AppComponent,
         HomeComponent,
-
         RegisterComponent,
-
         ShowComponent,
+        ShowtopviewComponent,
 
     ],
     imports: [
         BrowserModule,
         AppRoutingModule,
-
         ReactiveFormsModule,
         FormsModule,
         HttpClientModule,

@@ -13,6 +13,9 @@ export class ProviderService {
 
   constructor(private http: HttpClient) {
   }
+  getProviderTopView(): Observable<Provider[]> {
+    return this.http.get<Provider[]>(this.url+"/top/view");
+  }
 
   getAllProviderAcc(page: number): Observable<Provider[]> {
     return this.http.get<Provider[]>(this.url+"?page"+page);
