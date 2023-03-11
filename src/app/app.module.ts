@@ -14,6 +14,10 @@ import {NgxPaginationModule} from "ngx-pagination";
 import { ShowProfileComponent } from './User/show-profile/show-profile.component';
 import { LoginComponent } from './User/login/login.component';
 import { SupplierComponent } from './User/supplier/supplier.component';
+import { ChangeInfoComponent } from './change-info/change-info.component';
+import { ChangeAvatarComponent } from './change-avatar/change-avatar.component';
+import { ChangeAppearanceComponent } from './change-appearance/change-appearance.component';
+import { ChangePasswordComponent } from './change-password/change-password.component';
 
 
 @NgModule({
@@ -26,6 +30,10 @@ import { SupplierComponent } from './User/supplier/supplier.component';
         ShowProfileComponent,
         LoginComponent,
         SupplierComponent,
+        ChangeInfoComponent,
+        ChangeAvatarComponent,
+        ChangeAppearanceComponent,
+        ChangePasswordComponent,
     ],
     imports: [
         BrowserModule,

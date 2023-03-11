@@ -56,7 +56,9 @@ export class AccountService implements OnInit{
   login(account: any): Observable<AccountToken> {
     return this.http.post<AccountToken>("http://localhost:8080/login", account)
   }
-
+    changeInfo(account:any):Observable<any>{
+      return this.http.post<any>('http://localhost:8080/user/editProfile',account)
+    }
   setToken(token: string) {
     localStorage.setItem("token", token)
   }
@@ -74,4 +76,5 @@ export class AccountService implements OnInit{
     // @ts-ignore - nghĩa là không su dụng cú pháp của TS
     return JSON.parse(localStorage.getItem("accountToken"))
   }
+
 }
