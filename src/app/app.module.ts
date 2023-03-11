@@ -11,7 +11,10 @@ import {NgxPaginationModule} from "ngx-pagination";
 import { ShowProfileComponent } from './user/show-profile/show-profile.component';
 import {LoginComponent} from "./User/login/login.component";
 import {SupplierComponent} from "./User/supplier/supplier.component";
-
+import { AngularFireModule } from "@angular/fire/compat";
+import { AngularFireAuthModule } from "@angular/fire/compat/auth";
+import { AngularFireStorageModule } from '@angular/fire/compat/storage';
+import {environment} from "../environments/environment";
 @NgModule({
     declarations: [
         AppComponent,
@@ -27,6 +30,9 @@ import {SupplierComponent} from "./User/supplier/supplier.component";
         HttpClientModule,
         ReactiveFormsModule,
         NgxPaginationModule,
+        AngularFireStorageModule,
+        AngularFireAuthModule,
+        AngularFireModule.initializeApp(environment.firebaseConfig)
     ],
     providers: [],
     bootstrap: [AppComponent]

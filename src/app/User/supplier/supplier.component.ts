@@ -1,6 +1,8 @@
-import {Component} from '@angular/core';
+import {Component, ElementRef, ViewChild} from '@angular/core';
 import {FormGroup} from "@angular/forms";
 import {addFormatToken} from "ngx-bootstrap/chronos/format/format";
+import {AngularFireStorage} from "@angular/fire/compat/storage";
+import {finalize} from "rxjs";
 
 @Component({
     selector: 'app-supplier',
@@ -8,26 +10,34 @@ import {addFormatToken} from "ngx-bootstrap/chronos/format/format";
     styleUrls: ['./supplier.component.css']
 })
 export class SupplierComponent {
-    registrationForm!: FormGroup;
-    basicServices: string[] = [
-        'Ra mắt người nhà',
-        'Ra mắt bạn bè',
-        'Du lịch chung cùng nhóm bạn',
-        'Đi chơi chung',
-        'Tham dự sinh nhật',
-        'Trò chuyện offline',
-        'Trò chuyện online',
-        'Đi chơi tết',
-        'Đi chơi ngày lễ',
-    ];
-    freeServices: string[] = ['Nắm tay', 'Nói yêu', 'Nhìn mắt'];
-    premiumServices: string[] = [
-        'Nắm tay',
-        'Hôn tay',
-        'Ôm',
-        'Nhõng nhẽo',
-        'Cử chỉ thân mật',
-        'Nói lời yêu'
-    ]
+    @ViewChild('uploadFile1', {static: true}) public avatarDom1: ElementRef | undefined;
 
+    arrFiles: any = [];
+    arrayPicture : string[] = [];
+
+    constructor(private storage: AngularFireStorage) {
+    }
+
+    submit() {
+        for (let file of this.arrFiles) {
+            if (file != null) {
+                const filePath = file.name;
+                const fileRef = this.storage.ref(filePath);
+                this.storage.upload(filePath, file).snapshotChanges().pipe(
+                    finalize(() => (fileRef.getDownloadURL().subscribe(
+                        url => {
+                            this.arrayPicture.push(url);
+                            console.log(url);
+                        })))
+                ).subscribe();
+            }
+        }
+    }
+
+    uploadFileImg() {
+        for (const argument of this.avatarDom1?.nativeElement.files) {
+            this.arrFiles.push(argument)
+        }
+        this.submit();
+    }
 }
