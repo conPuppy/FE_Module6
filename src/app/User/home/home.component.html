@@ -215,7 +215,7 @@
                 <img src="../../../assets/images/team/team-1.jpg" alt="">
               </div>
               <div class="dropdown-user-name">
-                {{account.fullName}} <span> verified <i class="uil-check"></i> </span>
+                {{account?.username}} <span> verified <i class="uil-check"></i> </span>
               </div>
             </div>
 
@@ -224,7 +224,7 @@
           <!-- User menu -->
 
           <ul class="dropdown-user-menu">
-            <li><a href="#"> <i class="uil-bolt"></i> Become A Supplier</a> </li>
+            <li><a routerLink="/supplier/{{account.id}}"> <i class="uil-bolt"></i> Become A Supplier</a> </li>
             <li><a routerLink="/myProfile/"> <i class="uil-user"></i> My Profile </a> </li>
             <li><a href="email-inbox.html"> <i class="uil-envelope"></i> My Inbox </a></li>
             <li><a href="profile-setting.html"> <i class="uil-edit"></i> Edit Profile </a></li>

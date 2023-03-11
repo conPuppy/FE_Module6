@@ -16,6 +16,7 @@ export class HomeComponent implements OnInit{
 
   ngOnInit(): void {
     this.account = this.accountService.getAccountToken();
+    console.log(this.account)
   }
 
 }
