@@ -11,6 +11,7 @@ import {HttpClientModule} from "@angular/common/http";
 import {ShowComponent} from './show/show.component';
 import {NgxPaginationModule} from 'ngx-pagination';
 import {ShowtopviewComponent} from './showtopview/showtopview.component';
+import { ShowprofileproviderComponent } from './showprofileprovider/showprofileprovider.component';
 
 //import {ShowComponent} from './show/show.component';
 //import {HttpClientModule} from "@angular/common/http";
@@ -24,6 +25,7 @@ import {ShowtopviewComponent} from './showtopview/showtopview.component';
         RegisterComponent,
         ShowComponent,
         ShowtopviewComponent,
+        ShowprofileproviderComponent,
 
     ],
     imports: [
