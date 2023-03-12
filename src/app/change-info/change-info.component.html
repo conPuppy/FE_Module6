@@ -395,7 +395,7 @@
                 <div class="col-lg-9 col-12">
                     <div class="card mt-4">
                         <div class="card-header bg-light">
-                            <h4> Billing address </h4>
+                            <h4> Information </h4>
                         </div>
                         <form [formGroup]="formChangeInfo"  (ngSubmit)="changeInfo()" class="uk-child-width-1-2@s uk-grid-small p-4 uk-grid" uk-grid="">
                             <input hidden="hidden" formControlName="id">
@@ -405,12 +405,34 @@
                             </div>
                             <div>
                                 <h5 class="uk-text-bold mb-2"> Username </h5>
-                                <input type="text" class="uk-input" placeholder="Username" formControlName="username">
+                                <input type="text" class="uk-input" placeholder="Username" (transitionend)="funcCheckDuplicateUsername(formChangeInfo.get('username')?.value)" formControlName="username">
+                                <div class="uk-position-relative w-100" *ngFor="let validation of validation_messages.username">
+                                    <div class="error-message"
+                                         *ngIf="formChangeInfo?.get('username')?.hasError(validation.type) && (formChangeInfo?.get('username')?.dirty || formChangeInfo?.get('username')?.touched)">
+                                        {{validation.message}}</div>
+                                </div>
+                                <div class="uk-position-relative w-100" *ngIf="checkDuplicateUsername">
+                                    <div class="error-message">
+                                        Account already exists!
+                                    </div>
+                                </div>
                             </div>
+
                             <div class="uk-grid-margin uk-first-column">
                                 <h5 class="uk-text-bold mb-2"> Email </h5>
-                                <input type="email" class="uk-input" placeholder="Email" formControlName="email">
+                                <input type="email" class="uk-input" placeholder="Email" (transitionend)="funcCheckDuplicateEmail(formChangeInfo.get('email')?.value)" formControlName="email">
+                                <div class="uk-position-relative w-100" *ngFor="let validation of validation_messages.email">
+                                    <div class="error-message"
+                                         *ngIf="formChangeInfo?.get('email')?.hasError(validation.type) && (formChangeInfo?.get('email')?.dirty || formChangeInfo?.get('email')?.touched)">
+                                        {{validation.message}}</div>
+                                </div>
+                                <div class="uk-position-relative w-100" *ngIf="checkDuplicateEmail">
+                                    <div class="error-message">
+                                        Email already exists!
+                                    </div>
+                                </div>
                             </div>
+
                             <div class="uk-grid-margin">
                                 <h5 class="uk-text-bold mb-2"> Birthday </h5>
                                 <input type="date" class="uk-input" placeholder="BirthdayP" formControlName="birthday">
@@ -438,7 +460,7 @@
                         <hr class="mb-0">
                         <div class="uk-flex uk-flex-right p-3">
                             <button   class="btn btn-soft-primary btn-sm mr-2">Cancle</button>
-                            <button type="submit"  class="btn btn-primary btn-sm">Save Changes</button>
+                            <button [disabled]="!formChangeInfo.valid" type="submit"  class="btn btn-primary btn-sm">Save Changes</button>
                         </div>
                         </form>
                     </div>

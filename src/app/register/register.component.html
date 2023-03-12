@@ -18,7 +18,7 @@
                             {{validation.message}}</div>
                     </div>
                     <div class="uk-position-relative w-100" *ngIf="checkDuplicateUsername">
-                        <div class="error-message">git
+                        <div class="error-message">
                             Account already exists!
                         </div>
                     </div>
@@ -76,7 +76,7 @@
                             {{validation.message}}</div>
                     </div>
                 </div>
-                <button type="submit" class="btn btn-primary btn-block mb-4">Register</button>
+                <button type="submit" [disabled]="!formRegister.valid" class="btn btn-primary btn-block mb-4">Register</button>
             </form>
         </div>
     </div>

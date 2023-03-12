@@ -54,6 +54,8 @@ export class RegisterComponent implements OnInit {
         ],
         confirmPassword: [
             {type: 'required', message: 'Please re-enter your password.'},
+            {type: 'maxlength', message: 'Please enter password less than 16 characters.'},
+            {type: 'minlength', message: 'Please enter password more than 6 characters.'},
         ]
     };
 

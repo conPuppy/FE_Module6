@@ -44,8 +44,8 @@ export class AccountService implements OnInit{
     return this.http.get<any>(`http://localhost:8080/admin/search/${stringSearch}`)
   }
 
-  findById(id: number): Observable<Account> {
-    return this.http.get<Account>(`http://localhost:8080/admin/accounts/${id}`)
+  findById(id: number): Observable<any> {
+    return this.http.get<any>(`http://localhost:8080/admin/accounts/${id}`)
   }
 
   upVip(id: number): Observable<any> {
