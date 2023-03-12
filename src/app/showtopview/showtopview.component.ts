@@ -36,10 +36,14 @@ export class ShowtopviewComponent implements OnInit{
     this.providerService.findProviderById(id).subscribe(data=>{
       console.log(data)
       this.provider = data;
+
     })
   }
-  showDetailProvider(provider: Provider) {
-
+  increaseViewProviderById(id: number) {
+    this.providerService.increaseViewProviderById(id).subscribe(data=>{
+      this.provider = data;
+      this.ngOnInit();
+    })
   }
 
 }

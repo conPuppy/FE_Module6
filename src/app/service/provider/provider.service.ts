@@ -21,6 +21,9 @@ export class ProviderService {
     findProviderById(id: number): Observable<Provider> {
         return this.http.get<Provider>(this.url + "/" + id);
     }
+    increaseViewProviderById(id: number): Observable<Provider> {
+        return this.http.put<Provider>(this.url+"/view/"+id,this.findProviderById(id));
+    }
 
     getAllProviderAcc(page: number): Observable<Provider[]> {
         return this.http.get<Provider[]>(this.url + "?page" + page);
