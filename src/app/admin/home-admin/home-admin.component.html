@@ -420,6 +420,7 @@
                             <th scope="col">Status</th>
                             <th scope="col">Created at</th>
                             <th scope="col">VIP</th>
+                            <th scope="col">New</th>
                             <th scope="col"></th>
                         </tr>
                         </thead>
@@ -451,8 +452,12 @@
                             <td> {{a.dateOfRegister}} </td>
                             <td *ngIf="a.statusVip == 2"><span
                                     class="badge badge-danger rounded-pill">VIP</span></td>
-                            <td *ngIf="a.statusVip == 1"><span
+                            <td *ngIf="a.statusVip == 1||a.statusVip==3"><span
                                     class="badge badge-dark rounded-pill">Normal</span></td>
+                            <td *ngIf="a.statusVip==3"><span
+                                    class="badge badge-warning rounded-pill">! Request up Vip</span></td>
+                            <td *ngIf="a.statusVip!=3"><span
+                                    class="badge badge-dark rounded-pill">Nothing</span></td>
                             <td class="text-center">
                                 <!-- Actions -->
                                 <div class="actions ml-3">

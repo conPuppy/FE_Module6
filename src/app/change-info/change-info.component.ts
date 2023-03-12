@@ -106,4 +106,33 @@ export class ChangeInfoComponent implements OnInit {
         this.accountChange.wallet=this.account.wallet;
         this.accountService.changeInfo(this.accountChange).subscribe(res=> Swal.fire('Done!', 'Change Info', 'success'))
     }
+
+    requestVip(){
+        this.account.statusVip=3
+        console.log(this.account)
+        this.accountService.changeInfo(this.account).subscribe((res)=>{
+            this.accountService.findById(this.accountService.getAccountToken().id).subscribe((data)=>{
+                this.account=res;
+                Swal.fire('Done!', 'Request sent successfully!', 'success')
+            })
+        })
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }

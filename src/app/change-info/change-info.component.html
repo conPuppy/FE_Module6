@@ -364,10 +364,12 @@
                     </div>
                     <div class="right-side uk-visible@m">
                         <div class="btn-subscribe">
-                            <a href="#" class="btn btn-soft-primary btn-sm">
-                                <i class="uil-envelope-alt"></i> Send message </a>
-                            <a href="#" class="btn btn-primary btn-sm">
-                                <i class="icon-feather-user-plus"></i> Add Friend </a>
+                            <button *ngIf="account?.statusVip==1" (click)="requestVip()" class="btn btn-warning btn-sm">
+                                <i class="icon-feather-user"></i> Up Account VIP </button>
+                            <button *ngIf="account?.statusVip==2" class="btn btn-danger btn-sm">
+                                <i class="icon-feather-user"></i> Account VIP </button>
+                            <button  *ngIf="account?.statusVip==3" class="btn btn-success btn-sm">
+                                <i class="icon-feather-user"></i> Request Sended </button>
                         </div>
                     </div>
                 </div>
