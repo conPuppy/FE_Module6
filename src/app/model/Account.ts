@@ -14,5 +14,5 @@ export class Account {
     weight!: number;
     hobby!: string;
     description!: string;
-
+    dateOfRegister!: string;
 }

@@ -362,9 +362,9 @@
 
                 <div class="col-md-3 col-sm-6" *ngFor="let pr of providers">
                     <div class="card uk-inline-clip text-center animate-this">
-                        <img src="{{pr.account.avatar}}" alt="" style="height: 320px; width: 300px">
+                        <img src="{{pr?.account?.avatar}}" alt="" style="height: 320px; width: 300px">
                         <div class="p-3">
-                            <h4 class="mb-2">{{pr.account.fullName}}</h4>
+                            <h4 class="mb-2" data-bs-toggle="modal" data-bs-target="#myModal" (click)="findProviderById(pr.id)">{{pr.account.fullName}}</h4>
                             <div >
                                 <p>view: {{pr.view}}</p>
                                 <table style="width: 100%">
@@ -376,7 +376,7 @@
                                     </tbody>
                                 </table>
                                 <p class="text-muted uk-text-bold my-0"
-                                   *ngIf="pr.account.id==pr.account.id">{{pr.price}} $/ giờ</p>
+                                   >{{pr.price}} $/ giờ</p>
                             </div>
 
                             <div class="text-warning">
@@ -432,5 +432,93 @@
     </div>
 
 </div>
+
+<!-- The Modal -->
+<div class="modal" id="myModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+
+             Modal body
+            <div class="modal-body">
+                <section style="background-color: #eee;">
+                    <div class="container py-5">
+
+                        <div class="row">
+                            <div class="col-lg-4">
+                                <div class="card mb-4">
+                                    <div class="card-body text-center">
+                                        <img src="{{provider?.account?.avatar}}" class="rounded-circle img-fluid" style="width: 150px;">
+                                        <h5 class="my-3">View: {{provider?.view}}</h5>
+                                        <p class="text-muted mb-4">Start at: {{provider?.account?.dateOfRegister}}</p>
+                                        <div class="d-flex justify-content-center mb-2">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-8">
+                                <div class="card mb-4">
+                                    <div class="card-body">
+                                        <div class="row">
+                                            <div class="col-sm-5">
+                                                <p class="mb-0">Full Name</p>
+                                            </div>
+                                            <div class="col-sm-7">
+                                                <p class="text-muted mb-0">{{provider?.account?.fullName}}</p>
+                                            </div>
+                                        </div>
+                                        <hr>
+                                        <div class="row">
+                                            <div class="col-sm-5">
+                                                <p class="mb-0">Height</p>
+                                            </div>
+                                            <div class="col-sm-7">
+                                                <p class="text-muted mb-0">{{provider?.account?.height}} cm</p>
+                                            </div>
+                                        </div>
+                                        <hr>
+                                        <div class="row">
+                                            <div class="col-sm-5">
+                                                <p class="mb-0">Weight</p>
+                                            </div>
+                                            <div class="col-sm-7">
+                                                <p class="text-muted mb-0">{{provider?.account?.weight}} kg</p>
+                                            </div>
+                                        </div>
+                                        <hr>
+                                        <div class="row">
+                                            <div class="col-sm-5">
+                                                <p class="mb-0">Date of Birth</p>
+                                            </div>
+                                            <div class="col-sm-7">
+                                                <p class="text-muted mb-0">{{provider?.account?.birthday}}</p>
+                                            </div>
+                                        </div>
+                                        <hr>
+                                        <div class="row">
+                                            <div class="col-sm-5">
+                                                <p class="mb-0">Address</p>
+                                            </div>
+                                            <div class="col-sm-7">
+                                                <p class="text-muted mb-0">{{provider?.account?.country}}</p>
+                                            </div>
+                                        </div>
+                                        <hr>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <!-- Modal footer -->
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+            </div>
+
+        </div>
+    </div>
+</div>
+
 
 

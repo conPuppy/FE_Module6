@@ -15,6 +15,7 @@ import {ProvisionProviderService} from "../service/provisionprovider/provisionpr
 export class ShowtopviewComponent implements OnInit{
   accounts: Account[] = [];
   providers: Provider[] = [];
+  provider!: Provider;
   provisionproviders: ProvisionProvider[] = [];
   page: number = 1;
   total: number =0;
@@ -30,6 +31,15 @@ export class ShowtopviewComponent implements OnInit{
         this.provisionproviders = data;
       })
     })
+  }
+  findProviderById(id: number) {
+    this.providerService.findProviderById(id).subscribe(data=>{
+      console.log(data)
+      this.provider = data;
+    })
+  }
+  showDetailProvider(provider: Provider) {
+
   }
 
 }
