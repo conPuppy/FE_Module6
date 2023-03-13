@@ -3,19 +3,24 @@ import {BrowserModule} from '@angular/platform-browser';
 
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
-import {HomeComponent} from './home/home.component';
 
 import {RegisterComponent} from './register/register.component';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import {ShowComponent} from "./show/show.component";
+import {HomeComponent} from './User/home/home.component';
+import {HomeAdminComponent} from './admin/home-admin/home-admin.component';
 import {HttpClientModule} from "@angular/common/http";
-import {ShowComponent} from './show/show.component';
 import {NgxPaginationModule} from 'ngx-pagination';
 import {ShowtopviewComponent} from './showtopview/showtopview.component';
 import { ShowprofileproviderComponent } from './showprofileprovider/showprofileprovider.component';
+import { ShowProfileComponent } from './User/show-profile/show-profile.component';
+import { LoginComponent } from './User/login/login.component';
+import { SupplierComponent } from './User/supplier/supplier.component';
+import { ChangeInfoComponent } from './change-info/change-info.component';
+import { ChangeAvatarComponent } from './change-avatar/change-avatar.component';
+import { ChangeAppearanceComponent } from './change-appearance/change-appearance.component';
+import { ChangePasswordComponent } from './change-password/change-password.component';
 
-//import {ShowComponent} from './show/show.component';
-//import {HttpClientModule} from "@angular/common/http";
-//import {NgxPaginationModule} from "ngx-pagination";
 
 
 @NgModule({
@@ -26,6 +31,14 @@ import { ShowprofileproviderComponent } from './showprofileprovider/showprofilep
         ShowComponent,
         ShowtopviewComponent,
         ShowprofileproviderComponent,
+        HomeAdminComponent,
+        ShowProfileComponent,
+        LoginComponent,
+        SupplierComponent,
+        ChangeInfoComponent,
+        ChangeAvatarComponent,
+        ChangeAppearanceComponent,
+        ChangePasswordComponent,
 
     ],
     imports: [
@@ -34,11 +47,11 @@ import { ShowprofileproviderComponent } from './showprofileprovider/showprofilep
         ReactiveFormsModule,
         FormsModule,
         HttpClientModule,
-        NgxPaginationModule
-
+        NgxPaginationModule,
     ],
     providers: [],
     bootstrap: [AppComponent]
 })
+
 export class AppModule {
 }
