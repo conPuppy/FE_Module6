@@ -1,9 +1,7 @@
-export class Role{
-    id!:number;
-    name!:String;
+import {Account} from "./Account";
 
-    constructor(id: number, name: String) {
-        this.id = id;
-        this.name = name;
-    }
-}
+export interface Role {
+    id: number;
+    role: string;
+    accounts?: Account[];
+}git

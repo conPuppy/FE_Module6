@@ -1,5 +1,5 @@
 import {FormControl, FormGroup} from "@angular/forms";
-import {Role} from "../models/Role";
+import {Role} from "./Role";
 
 export class AccountForChange {
     id!: number;

@@ -4,7 +4,7 @@ import {Account} from "../../model/Account";
 import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs";
 import {AccountCreate} from "../../model/AccountCreate";
-import {AccountToken} from "../../models/AccountToken";
+import {AccountToken} from "../../model/AccountToken";
 
 @Injectable({
     providedIn: 'root'
