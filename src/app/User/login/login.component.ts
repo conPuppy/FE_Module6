@@ -3,8 +3,8 @@ import {FormControl, FormGroup, Validators} from "@angular/forms";
 import {AccountService} from "../../service/account/account.service";
 import {Router} from "@angular/router";
 import Swal from "sweetalert2";
-import {AccountToken} from "../../models/AccountToken";
-import {Account} from "../../models/Account";
+import {AccountToken} from "../../model/AccountToken";
+import {Account} from "../../model/Account";
 
 @Component({
     selector: 'app-login',
