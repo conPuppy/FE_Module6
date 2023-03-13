@@ -8,10 +8,13 @@ import {ChangeInfoComponent} from "./change-info/change-info.component";
 import {ChangeAvatarComponent} from "./change-avatar/change-avatar.component";
 import {ChangeAppearanceComponent} from "./change-appearance/change-appearance.component";
 import {ChangePasswordComponent} from "./change-password/change-password.component";
+import {ShowComponent} from "./show/show.component";
+import {ShowtopviewComponent} from "./showtopview/showtopview.component";
 
 
 const routes: Routes = [
-  {path:"", component: HomeComponent},
+  {path:"", component: ShowComponent},
+  {path:"topview", component: ShowtopviewComponent},
   {path:"register", component: RegisterComponent},
   {path:"admin", component: HomeAdminComponent},
   {path:"login", component: LoginComponent},

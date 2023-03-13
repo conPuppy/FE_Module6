@@ -10,7 +10,9 @@ import {ShowComponent} from "./show/show.component";
 import {HomeComponent} from './User/home/home.component';
 import {HomeAdminComponent} from './admin/home-admin/home-admin.component';
 import {HttpClientModule} from "@angular/common/http";
-import {NgxPaginationModule} from "ngx-pagination";
+import {NgxPaginationModule} from 'ngx-pagination';
+import {ShowtopviewComponent} from './showtopview/showtopview.component';
+import { ShowprofileproviderComponent } from './showprofileprovider/showprofileprovider.component';
 import { ShowProfileComponent } from './User/show-profile/show-profile.component';
 import { LoginComponent } from './User/login/login.component';
 import { SupplierComponent } from './User/supplier/supplier.component';
@@ -20,12 +22,15 @@ import { ChangeAppearanceComponent } from './change-appearance/change-appearance
 import { ChangePasswordComponent } from './change-password/change-password.component';
 
 
+
 @NgModule({
     declarations: [
         AppComponent,
         HomeComponent,
         RegisterComponent,
         ShowComponent,
+        ShowtopviewComponent,
+        ShowprofileproviderComponent,
         HomeAdminComponent,
         ShowProfileComponent,
         LoginComponent,
@@ -34,6 +39,7 @@ import { ChangePasswordComponent } from './change-password/change-password.compo
         ChangeAvatarComponent,
         ChangeAppearanceComponent,
         ChangePasswordComponent,
+
     ],
     imports: [
         BrowserModule,
